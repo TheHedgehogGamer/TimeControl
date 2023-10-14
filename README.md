@@ -44,4 +44,4 @@ public class Main extends JavaPlugin {
 depend:
   - Time-Control
 ```
- - Is the `Time-Control.jar` plugin in the [plugin](https://github.com/TheHedgehogGamer/TimeControl/releases/tag/Plugin) folder of your server?
+ - Is the [Time-Control.jar](https://github.com/TheHedgehogGamer/TimeControl/releases/tag/Plugin) plugin in the plugin folder of your server?
