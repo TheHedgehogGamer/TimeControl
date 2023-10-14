@@ -1,2 +1,6 @@
 # TimeControl
-Different times of day for each player
+Control which time is displayed for which player.
+
+# How to use in maven?
+
+

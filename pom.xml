@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>de.setlex</groupId>
-    <artifactId>TimeControl</artifactId>
+    <artifactId>time-control</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>Time-Control</name>
+    <name>Time Control</name>
 
     <description>Different times of day for each player</description>
     <properties>
@@ -45,6 +45,32 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.5.0</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.3.0</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
         <resources>
             <resource>
@@ -73,4 +99,12 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub TheHedgehogGamer Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/TheHedgehogGamer/TimeControl</url>
+        </repository>
+    </distributionManagement>
 </project>
