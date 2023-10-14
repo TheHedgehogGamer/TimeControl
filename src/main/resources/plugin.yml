@@ -6,3 +6,5 @@ prefix: TC
 authors: [TheHedgehogGamer]
 description: Different times of day for each player
 website: setlex.de
+depend:
+  - Time-Control

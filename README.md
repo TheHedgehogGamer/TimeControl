@@ -1,7 +1,7 @@
 # TimeControl
 Control which time is displayed for which player.
 
-# How to use in maven?
+# How to use with maven?
 ```xml
     <dependencies>
     ...
@@ -13,3 +13,35 @@ Control which time is displayed for which player.
     ...
     </dependencies>
 ```
+
+# How to access the api in your code
+
+```java
+public class Main extends JavaPlugin {
+
+    // ...
+    private TimeControl timeControlInstance;
+
+    @Override
+    public void onEnable() {
+        timeControlInstance = getPlugin(TimeControl.class);
+        
+        // Example how to use a method:
+        timeControlInstance.setDefaultMode(Mode.FROZEN(0, 6000));
+    }
+
+    public TimeControl getTimeControlInstance() {
+        return timeControlInstance;
+    }
+    // ...
+    
+}
+```
+
+# Get errors?
+ - Note that you specify `Time-Control` as `depend` in the `plugin.yml`
+```yml
+depend:
+  - Time-Control
+```
+ - Is the `Time-Control.jar` plugin in the plugin folder of your server?

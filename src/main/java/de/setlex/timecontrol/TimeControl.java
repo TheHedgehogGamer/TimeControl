@@ -17,6 +17,7 @@ public final class TimeControl extends JavaPlugin {
     private static TimeControl instance;
 
     private Map<UUID, Mode> onlinePlayer;
+    private Mode defaultMode = Mode.DEFAULT();
 
     @Override
     public void onLoad() {
@@ -33,6 +34,11 @@ public final class TimeControl extends JavaPlugin {
 
     @Override
     public void onEnable() {
+
+        TimeControl timeControl = getPlugin(TimeControl.class);
+
+        timeControl.setDefaultMode(Mode.FROZEN(0, 6000));
+
         // If the server restarts, all online players will be added automatically
         onlinePlayer = new HashMap<UUID, Mode>() {};
         Bukkit.getOnlinePlayers().forEach(player -> onlinePlayer.put(player.getUniqueId(), Mode.DEFAULT()));
@@ -68,10 +74,17 @@ public final class TimeControl extends JavaPlugin {
     }
 
     /**
-     * @param mode The mode you want to assign to the players
+     * @param mode The mode you want to assign to the online players
      */
-    public void setAllPlayersMode(Mode mode) {
+    public void setAllOnlinePlayersMode(Mode mode) {
         Bukkit.getOnlinePlayers().forEach(player -> onlinePlayer.put(player.getUniqueId(), mode));
+    }
+
+    /**
+     * @param mode The mode you want to assign to every player
+     */
+    public void setDefaultMode(Mode mode) {
+        defaultMode = mode;
     }
 
     /**
@@ -109,7 +122,7 @@ public final class TimeControl extends JavaPlugin {
      * @param player The player to register
      */
     public void registerPlayer(Player player) {
-        onlinePlayer.put(player.getUniqueId(), Mode.DEFAULT());
+        onlinePlayer.put(player.getUniqueId(), defaultMode);
     }
 
     /**
@@ -123,7 +136,7 @@ public final class TimeControl extends JavaPlugin {
      * @param uuid The UUID of the player to register
      */
     public void registerPlayer(UUID uuid) {
-        onlinePlayer.put(uuid, Mode.DEFAULT());
+        onlinePlayer.put(uuid, defaultMode);
     }
 
     /**
