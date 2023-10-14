@@ -34,11 +34,6 @@ public final class TimeControl extends JavaPlugin {
 
     @Override
     public void onEnable() {
-
-        TimeControl timeControl = getPlugin(TimeControl.class);
-
-        timeControl.setDefaultMode(Mode.FROZEN(0, 6000));
-
         // If the server restarts, all online players will be added automatically
         onlinePlayer = new HashMap<UUID, Mode>() {};
         Bukkit.getOnlinePlayers().forEach(player -> onlinePlayer.put(player.getUniqueId(), Mode.DEFAULT()));
