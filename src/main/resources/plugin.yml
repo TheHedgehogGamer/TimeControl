@@ -1,0 +1,8 @@
+name: Time-Control
+version: '${project.version}'
+main: de.setlex.timecontrol.Main
+api-version: '1.20'
+prefix: TC
+authors: [TheHedgehogGamer]
+description: Different times of day for each player
+website: setlex.de
