@@ -24,16 +24,17 @@ public final class TimeControl extends JavaPlugin {
 
         instance = this;
 
+    }
+
+    @Override
+    public void onEnable() {
+
         // registering events
         PluginManager pluginManager = getServer().getPluginManager();
 
         pluginManager.registerEvents(new PlayerJoinListener(), this);
         pluginManager.registerEvents(new PlayerQuitListener(), this);
-
-    }
-
-    @Override
-    public void onEnable() {
+        
         // If the server restarts, all online players will be added automatically
         onlinePlayer = new HashMap<UUID, Mode>() {};
         Bukkit.getOnlinePlayers().forEach(player -> onlinePlayer.put(player.getUniqueId(), Mode.DEFAULT()));
