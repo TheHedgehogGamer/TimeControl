@@ -8,7 +8,7 @@ Control which time is displayed for which player.
         <dependency>
             <groupId>de.setlex</groupId>
             <artifactId>time-control</artifactId>
-            <version>1.0.1</version>
+            <version>1.0.4</version>
         </dependency>
     ...
     </dependencies>
