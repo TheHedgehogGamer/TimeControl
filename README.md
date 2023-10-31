@@ -45,3 +45,4 @@ depend:
   - Time-Control
 ```
  - Is the [Time-Control.jar](https://github.com/TheHedgehogGamer/TimeControl/releases/tag/Plugin) plugin in the plugin folder of your server?
+ - Do you have the spigot [Build Tools](https://www.spigotmc.org/wiki/buildtools/) installed?
